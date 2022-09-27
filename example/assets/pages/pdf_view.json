@@ -1,0 +1,52 @@
+{
+    "type": "scaffold",
+    "args": {
+        "appBar": {
+            "type": "app_bar",
+            "args": {
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "PDF view"
+                    }
+                }
+            }
+        },
+        "body": {
+            "type": "column",
+            "children": [
+                {
+                    "type": "text",
+                    "args": {
+                        "text": "Wrap with Column",
+                        "style": {
+                            "fontSize": 30,
+                            "color": "#f00"
+                        }
+                    }
+                },
+                {
+                    "type": "expanded",
+                    "child": {
+                        "type": "pdf_view",
+                        "args": {
+                            "fromUrl": "https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf",
+                            "pageSnapping": true,
+                            "scrollDirection": "vertical"
+                        }
+                    }
+                },
+                {
+                    "type": "text",
+                    "args": {
+                        "text": "Wrap with Column",
+                        "style": {
+                            "fontSize": 30,
+                            "color": "#f00"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

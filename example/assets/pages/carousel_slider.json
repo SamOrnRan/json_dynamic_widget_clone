@@ -1,0 +1,249 @@
+{
+    "type": "save_context",
+    "args": {
+        "key": "context"
+    },
+    "child": {
+        "type": "scaffold",
+        "args": {
+            "appBar": {
+                "type": "app_bar",
+                "args": {
+                    "title": {
+                        "type": "text",
+                        "args": {
+                            "text": "Simple Widget"
+                        }
+                    },
+                    "centerTitle": true,
+                    "backgroundColor": "#6495ED"
+                }
+            },
+            "body": {
+                "type": "set_value",
+                "args": {
+                    "listSlider": {
+                        "items": [
+                            {
+                                "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/09/27/all-the-fruits-cut-whole.jpg.rend.hgtvcom.616.493.suffix/1632778035320.jpeg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://medilifefood.com/wp-content/uploads/2019/10/purepng.com-red-appleappleapplesfruitsweet-1701527180174lrnig.png",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://nurserynisarga.in/wp-content/uploads/2021/08/Hot-climate-Apple.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://chefsmandala.com/wp-content/uploads/2018/03/Apple-Green.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://files.mysteryofiran.com/media-files/2021/09/1d62e4e3-wholesale-fresh-apple-fruit-organic-natural-red-yellow-1.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-2foodgroups_vegetables_detailfeature.jpg?sfvrsn=226f1bc7_6",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/09/27/all-the-fruits-cut-whole.jpg.rend.hgtvcom.616.493.suffix/1632778035320.jpeg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://medilifefood.com/wp-content/uploads/2019/10/purepng.com-red-appleappleapplesfruitsweet-1701527180174lrnig.png",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://nurserynisarga.in/wp-content/uploads/2021/08/Hot-climate-Apple.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://chefsmandala.com/wp-content/uploads/2018/03/Apple-Green.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://files.mysteryofiran.com/media-files/2021/09/1d62e4e3-wholesale-fresh-apple-fruit-organic-natural-red-yellow-1.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-2foodgroups_vegetables_detailfeature.jpg?sfvrsn=226f1bc7_6",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/09/27/all-the-fruits-cut-whole.jpg.rend.hgtvcom.616.493.suffix/1632778035320.jpeg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://medilifefood.com/wp-content/uploads/2019/10/purepng.com-red-appleappleapplesfruitsweet-1701527180174lrnig.png",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://nurserynisarga.in/wp-content/uploads/2021/08/Hot-climate-Apple.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://chefsmandala.com/wp-content/uploads/2018/03/Apple-Green.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://files.mysteryofiran.com/media-files/2021/09/1d62e4e3-wholesale-fresh-apple-fruit-organic-natural-red-yellow-1.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-2foodgroups_vegetables_detailfeature.jpg?sfvrsn=226f1bc7_6",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/09/27/all-the-fruits-cut-whole.jpg.rend.hgtvcom.616.493.suffix/1632778035320.jpeg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://medilifefood.com/wp-content/uploads/2019/10/purepng.com-red-appleappleapplesfruitsweet-1701527180174lrnig.png",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://nurserynisarga.in/wp-content/uploads/2021/08/Hot-climate-Apple.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://chefsmandala.com/wp-content/uploads/2018/03/Apple-Green.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "http://files.mysteryofiran.com/media-files/2021/09/1d62e4e3-wholesale-fresh-apple-fruit-organic-natural-red-yellow-1.jpg",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            },
+                            {
+                                "image": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-2foodgroups_vegetables_detailfeature.jpg?sfvrsn=226f1bc7_6",
+                                "description": "What is a fruit? In a botanical sense, a fruit is the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Apricots, bananas, and grapes, as well as bean pods, corn grains, tomatoes, cucumbers, and (in their shells) acorns and almonds, are all technically fruits"
+                            }
+                        ]
+                    },
+                    "objectImage": {
+                        "type": "container",
+                        "args": {
+                            "width": "infinity",
+                            "height": "infinity",
+                            "margin": {
+                                "left": 2.0,
+                                "right": 2.0
+                            },
+                            "decoration": {
+                                "color": "#fff",
+                                "borderRadius": 10
+                            }
+                        },
+                        "child": {
+                            "type": "clip_rrect",
+                            "args": {
+                                "borderRadius": {
+                                    "type": "circular",
+                                    "radius": 10
+                                }
+                            },
+                            "child": {
+                                "type": "placeholder_network",
+                                "args": {
+                                    "boxFit": "fitWidth",
+                                    "placeholder": "assets/images/android.png",
+                                    "image": "${value['image']}"
+                                }
+                            }
+                        }
+                    },
+                    "listview": {
+                        "type": "container",
+                        "args": {
+                            "color": "#6495ED"
+                        },
+                        "child": {
+                            "type": "card",
+                            "child": {
+                                "type": "column",
+                                "children": [
+                                    {
+                                        "type": "placeholder_network",
+                                        "args": {
+                                            "height": 100,
+                                            "boxFit": "cover",
+                                            "placeholder": "assets/images/android.png",
+                                            "image": "${value['image']}"
+                                        }
+                                    },
+                                    {
+                                        "type": "text",
+                                        "args": {
+                                            "text": "${value['description']}",
+                                            "maxLines": 1,
+                                            "overflow": "ellipsis"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "child": {
+                    "type": "column",
+                    "children": [
+                        {
+                            "type": "sized_box",
+                            "args": {
+                                "height": 30
+                            }
+                        },
+                        {
+                            "type": "carousel_slider",
+                            "args": {
+                                "height": 200,
+                                "initial_page": 0,
+                                "autoPlay": true,
+                                "viewportFraction": 1
+                            },
+                            "children": "${for_each(listSlider['items'],'objectImage')}"
+                        },
+                        {
+                            "type": "sized_box",
+                            "args": {
+                                "height": 10
+                            }
+                        },
+                        {
+                            "type": "flexible",
+                            "args": {
+                                "flex": 10
+                            },
+                            "child": {
+                                "type": "list_view",
+                                "args": {
+                                    "limits": 10,
+                                    "shrinkWrap": true
+                                },
+                                "children": "${for_each(listSlider['items'],'listview')}"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

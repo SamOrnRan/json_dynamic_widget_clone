@@ -1,0 +1,48 @@
+{
+    "type": "scaffold",
+    "args": {
+        "appBar": {
+            "type": "app_bar",
+            "args": {
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "Form"
+                    }
+                }
+            }
+        },
+        "backgroundColor": "#e0e0e0",
+        "body": {
+            "type": "text_form_field",
+            "id": "first_name",
+            "args": {
+                "decoration": {
+                    "hintText": "John",
+                    "labelText": "First Name",
+                    "suffixIcon": {
+                        "type": "icon_button",
+                        "args": {
+                            "icon": {
+                                "type": "icon",
+                                "args": {
+                                    "icon": {
+                                        "codePoint": 57704,
+                                        "fontFamily": "MaterialIcons",
+                                        "size": 50
+                                    }
+                                }
+                            },
+                            "onPressed": "${set_value('first_name','')}"
+                        }
+                    }
+                },
+                "validators": [
+                    {
+                        "type": "required"
+                    }
+                ]
+            }
+        }
+    }
+}

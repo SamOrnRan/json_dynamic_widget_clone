@@ -1,0 +1,140 @@
+{
+    "type": "save_context",
+    "args": {
+        "key": "dialogContext"
+    },
+    "child": {
+        "type": "set_value",
+        "args": {
+            "message": "Flutter Plugin for sending SMS and MMS on Android and iOS. If you send to more than one person it will send as MMS. On the iOS if the number is an iPhone and iMessage is enabled it will send as an iMessage",
+            "toast": {
+                "content": "Show toast now  to learni it",
+                "toastLength": "length_long"
+            },
+            "dialog": {
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "Show Dialog"
+                    }
+                }
+            },
+            "editDialogData": {
+                "actions": [
+                    {
+                        "title": {
+                            "type": "text",
+                            "args": {
+                                "text": "Okay"
+                            }
+                        },
+                        "onPressed": "${noop()}"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "Show Dialog"
+                    }
+                },
+                "content": {
+                    "type": "text",
+                    "args": {
+                        "text": "${message}"
+                    }
+                }
+            }
+        },
+        "child": {
+            "type": "scaffold",
+            "args": {
+                "appBar": {
+                    "type": "app_bar",
+                    "args": {
+                        "title": {
+                            "type": "text",
+                            "args": {
+                                "text": "Share"
+                            }
+                        }
+                    }
+                },
+                "body": {
+                    "type": "container",
+                    "args": {
+                        "width": "infinity"
+                    },
+                    "child": {
+                        "type": "column",
+                        "args": {
+                            "mainAxisAlignment": "center",
+                            "crossAxisAlignment": "center"
+                        },
+                        "children": [
+                            {
+                                "type": "elevated_button",
+                                "args": {
+                                    "onPressed": "${share('Share Simple','https://pub.dev/packages/share_plus')}"
+                                },
+                                "child": {
+                                    "type": "text",
+                                    "args": {
+                                        "text": "Share"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "elevated_button",
+                                "args": {
+                                    "onPressed": "${share('Demo Share','https://pub.dev/packages/share_plus')}"
+                                },
+                                "child": {
+                                    "type": "text",
+                                    "args": {
+                                        "text": "Share file"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "elevated_button",
+                                "args": {
+                                    "onPressed": "${send_sms('12029383','message')}"
+                                },
+                                "child": {
+                                    "type": "text",
+                                    "args": {
+                                        "text": "Send Message"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "elevated_button",
+                                "args": {
+                                    "onPressed": "${toast_show('toast')}"
+                                },
+                                "child": {
+                                    "type": "text",
+                                    "args": {
+                                        "text": "Toast show "
+                                    }
+                                }
+                            },
+                            {
+                                "type": "elevated_button",
+                                "args": {
+                                    "onPressed": "${show_dialog('dialogContext','editDialogData')}"
+                                },
+                                "child": {
+                                    "type": "text",
+                                    "args": {
+                                        "text": "Show Dialog"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "scaffold",
+    "args": {
+        "appBar": {
+            "type": "app_bar",
+            "args": {
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "web"
+                    }
+                }
+            }
+        },
+        "body": {
+            "type": "web_view",
+            "args": {
+                "initialUrl": "https://flutter.dev",
+                "zoomEnabled": false
+            }
+        }
+    }
+}

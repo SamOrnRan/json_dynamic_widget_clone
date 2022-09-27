@@ -1,0 +1,69 @@
+name: 'json_dynamic_widget'
+description: 'A library to dynamically generate widgets within Flutter from JSON or other Map-like structures.'
+homepage: 'https://github.com/peiffer-innovations/json_dynamic_widget'
+version: '5.1.2+1'
+
+environment: 
+  sdk: '>=2.17.0 <3.0.0'
+
+analyzer: 
+  exclude: 
+    - 'lib/generated/**'
+
+
+dependencies: 
+  carousel_slider: ^4.1.1
+  child_builder: '^2.0.0+3'
+  collection: '^1.16.0'
+  flutter: 
+    sdk: 'flutter'
+  flutter_spinkit: '^5.1.0'
+  form_validation: '^2.1.0+13'
+  pdfx: ^2.2.0
+  json_conditional: '^2.1.0+9'
+  json_class: '^2.1.2+8'
+  json_schema2: '^2.0.2+9'
+  json_theme: '^4.0.0+8'
+  internet_file: '^1.2.0'
+  interpolation: '^2.1.2'
+  logging: '^1.0.2'
+  meta: '^1.7.0'
+  template_expressions: '^1.1.7+6'
+  uuid: '^3.0.6'
+  yaon: '^1.0.1+3'
+  webview_flutter: ^3.0.4
+  
+
+false_secrets: 
+  - 'example/web/index.html'
+
+dev_dependencies: 
+  flutter_test: 
+    sdk: 'flutter'
+
+
+ignore_updates: 
+  - 'archive'
+  - 'async'
+  - 'boolean_selector'
+  - 'characters'
+  - 'charcode'
+  - 'collection'
+  - 'clock'
+  - 'crypto'
+  - 'fake_async'
+  - 'file'
+  - 'matcher'
+  - 'material_color_utilities'
+  - 'meta'
+  - 'path'
+  - 'source_span'
+  - 'stack_trace'
+  - 'stream_channel'
+  - 'string_scanner'
+  - 'sync_http'
+  - 'term_glyph'
+  - 'test_api'
+  - 'typed_data'
+  - 'vector_math'
+  - 'webdriver'

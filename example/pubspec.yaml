@@ -1,0 +1,75 @@
+name: 'example'
+description: 'Example app for the JsonDynamicWidget library'
+publish_to: 'none'
+version: '1.0.0+15'
+
+environment: 
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies: 
+  automated_testing_framework: '^4.0.7'
+  automated_testing_framework_plugin_images: '^4.0.0+13'
+  desktop_window: '^0.4.0'
+  dotted_border: '^2.0.0+2'
+  flutter: 
+    sdk: 'flutter'
+  flutter_share: ^2.0.0
+  flutter_sms: ^2.3.3
+  flutter_svg: '^1.1.4'
+  fluttertoast: ^8.0.9
+  json_dynamic_widget: 
+    path: '../'
+
+dev_dependencies: 
+  flutter_test: 
+    sdk: 'flutter'
+
+
+flutter: 
+  uses-material-design: true
+  assets: 
+    - 'assets/images/'
+    - 'assets/pages/'
+    - 'assets/secrets/'
+    - 'assets/widgets/'
+  
+  fonts: 
+    - 
+      family: 'lato'
+      fonts: 
+        - 
+          asset: 'assets/fonts/Lato-Regular.ttf'
+
+    - 
+      family: 'metal'
+      fonts: 
+        - 
+          asset: 'assets/fonts/MetalMania-Regular.ttf'
+
+
+
+ignore_updates: 
+  - 'archive'
+  - 'async'
+  - 'boolean_selector'
+  - 'characters'
+  - 'charcode'
+  - 'collection'
+  - 'clock'
+  - 'crypto'
+  - 'fake_async'
+  - 'file'
+  - 'matcher'
+  - 'material_color_utilities'
+  - 'meta'
+  - 'path'
+  - 'source_span'
+  - 'stack_trace'
+  - 'stream_channel'
+  - 'string_scanner'
+  - 'sync_http'
+  - 'term_glyph'
+  - 'test_api'
+  - 'typed_data'
+  - 'vector_math'
+  - 'webdriver'
