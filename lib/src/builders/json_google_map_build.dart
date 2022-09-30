@@ -215,6 +215,14 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
       layoutDirection: widget.layoutDirection,
       padding: widget.padding ?? EdgeInsets.zero,
       buildingsEnabled: widget.buildingsEnabled,
+      onCameraMove: (CameraPosition position) {
+        marker.add(
+          Marker(
+              markerId: MarkerId('ee-1'),
+              position: _latLng,
+              icon: BitmapDescriptor.defaultMarker),
+        );
+      },
     );
   }
 
@@ -268,18 +276,27 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
       setState(() {
         marker.add(
           Marker(
-            draggable: true,
-            markerId: MarkerId(_lat.toString()),
-            position: LatLng(_lat!, _lng!),
-            onTap: () async {
-              // when click on event marker it is zoom by current latlng
-              final controller = await googleMapController.future;
-              await controller.animateCamera(CameraUpdate.newLatLngZoom(
-                  LatLng(_currentPositionLaglng[i]['lat'],
-                      _currentPositionLaglng[i]['lng']),
-                  15.5));
-            },
-          ),
+              draggable: true,
+              markerId: MarkerId(_lat.toString()),
+              position: LatLng(_lat!, _lng!),
+              icon: BitmapDescriptor.defaultMarker,
+              onTap: () async {
+                // when click on event marker it is zoom by current latlng
+                final controller = await googleMapController.future;
+                await controller.animateCamera(CameraUpdate.newLatLngZoom(
+                    LatLng(_currentPositionLaglng[i]['lat'],
+                        _currentPositionLaglng[i]['lng']),
+                    15.5));
+              },
+              onDrag: (value) async {
+                final controller = await googleMapController.future;
+
+                await controller.animateCamera(CameraUpdate.newCameraPosition(
+                    CameraPosition(
+                        target: LatLng(value.latitude, value.longitude),
+                        zoom: 15.5)));
+                log(value.latitude.toString());
+              }),
         );
       });
     }
