@@ -7,15 +7,19 @@ import 'package:automated_testing_framework/automated_testing_framework.dart';
 import 'package:automated_testing_framework_plugin_images/automated_testing_framework_plugin_images.dart';
 import 'package:desktop_window/desktop_window.dart';
 import 'package:example/src/components/clipper.dart';
-import 'package:example/src/custom_function/send_sms.dart' as send_sms;
-import 'package:example/src/custom_function/share_build.dart' as share_build;
-import 'package:example/src/custom_function/show_dialog.dart'
+import 'package:example/src/components/custom_function/send_sms.dart'
+    as send_sms;
+import 'package:example/src/components/custom_function/share_build.dart'
+    as share_build;
+import 'package:example/src/components/custom_function/show_dialog.dart'
     as show_dialog_fun;
-import 'package:example/src/custom_function/toast_build.dart' as toast_build;
+import 'package:example/src/components/custom_function/toast_build.dart'
+    as toast_build;
 import 'package:example/src/custom_schemas/dotted_border_schema.dart';
 import 'package:example/src/custom_schemas/svg_schema.dart';
 import 'package:example/src/dotted_border_builder.dart';
 import 'package:example/src/page/hom_page.dart';
+import 'package:example/src/page/page_detial.dart';
 import 'package:example/src/svg_builder.dart';
 
 import 'package:flutter/foundation.dart';
@@ -75,20 +79,6 @@ void main() async {
     ),
   );
 
-  // registry.registerFunction('navigatePage', ({args, required registry}) async {
-  //   var jsonStr = await rootBundle.loadString('assets/pages/${args![0]}.json');
-  //   var jsonData = json.decode(jsonStr);
-  //   await navigatorKey.currentState!.push(
-  //     MaterialPageRoute(
-  //       builder: (BuildContext context) => FullWidgetPage(
-  //         data: JsonWidgetData.fromDynamic(
-  //           jsonData,
-  //           registry: registry,
-  //         )!,
-  //       ),
-  //     ),
-  //   );
-  // });
   registry.registerFunctions({
     'getImageAsset': ({args, required registry}) =>
         'assets/images/image${args![0]}.jpg',
@@ -118,6 +108,20 @@ void main() async {
           );
         },
     'noop': ({args, required registry}) => () {},
+    'toPageDitail': ({args, required registry}) => () async {
+          var getvalue = registry.getValue(args![0]);
+          registry.setValue('description', getvalue['disription']);
+          registry.setValue('image', getvalue['image']);
+          registry.setValue('getvalueName', getvalue['name']);
+
+          final root =
+              await rootBundle.loadString('assets/pages/page_detial.json');
+          final valueroot = json.decode(root);
+
+          await navigatorKey.currentState!.push(MaterialPageRoute(
+              builder: (BuildContext context) => PageDetailJsonDynamicWidget(
+                  valueroot: valueroot, registry: registry)));
+        },
     'validateForm': ({args, required registry}) => () {
           BuildContext context = registry.getValue(args![0]);
 

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
-
-import '../ultil/constand.dart';
+import '../../ultil/constand.dart';
 
 JsonWidgetFunction toastBody =
     (({args, required JsonWidgetRegistry registry}) => () {

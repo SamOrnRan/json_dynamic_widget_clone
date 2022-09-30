@@ -131,6 +131,7 @@ class RootPage extends StatelessWidget {
     'web_view': _onJsonPageSelected,
     'simple_text_textformfile_by_me': _onJsonPageSelected,
     'show_functions': _onJsonPageSelected,
+    'google_map': _onJsonPageSelected,
   };
 
   @override

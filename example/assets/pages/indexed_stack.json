@@ -45,7 +45,7 @@
                 }
               },
               {
-                "type": "raised_button",
+                "type": "elevated_button",
                 "args": {
                   "onPressed": "${set_value('index', 1)}"
                 },
@@ -63,7 +63,7 @@
                 }
               },
               {
-                "type": "raised_button",
+                "type": "elevated_button",
                 "args": {
                   "onPressed": "${set_value('index', 2)}"
                 },

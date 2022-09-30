@@ -3,6 +3,7 @@ import 'dart:core';
 import 'package:child_builder/child_builder.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:json_class/json_class.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
 import 'package:json_theme/json_theme.dart';
@@ -295,7 +296,7 @@ class _PaginationAndLoadingState extends State<PaginationAndLoading> {
             ? endAt! + limits!
             : widget.data.children!.length;
         hideProgress = true;
-        Timer(Duration(milliseconds: 150), () {
+        Timer(Duration(milliseconds: 100), () {
           currentChildren =
               widget.data.children!.getRange(offset, endAt!).toList();
           setState(() {
@@ -312,40 +313,43 @@ class _PaginationAndLoadingState extends State<PaginationAndLoading> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ListView.builder(
-          addAutomaticKeepAlives: widget.valueAddAutomaticKeepAlives ?? true,
-          addRepaintBoundaries: widget.vlaueAddRepaintBoundaries ?? true,
-          addSemanticIndexes: widget.addSemanticIndexes ?? true,
-          cacheExtent: widget.itemExtent,
-          clipBehavior: widget.clipBehavior ?? Clip.hardEdge,
-          controller: controller,
-          dragStartBehavior:
-              widget.dragStartBehavior ?? DragStartBehavior.start,
-          itemCount: currentChildren.length,
-          itemExtent: widget.itemExtent,
-          key: widget.key,
-          keyboardDismissBehavior: widget.scrollViewKeyboardDismissBehavior ??
-              ScrollViewKeyboardDismissBehavior.manual,
-          padding: widget.padding,
-          physics: widget.physics,
-          primary: widget.primary,
-          prototypeItem: widget.prototypeItem != null
-              ? widget.prototypeItem!
-                  .build(context: context, childBuilder: widget.childBuilder)
-              : null,
-          restorationId: widget.restorationId,
-          reverse: widget.reverse ?? false,
-          scrollDirection: widget.scrollDirection ?? Axis.vertical,
-          semanticChildCount: currentChildren.length,
-          shrinkWrap: widget.shrinkWrap ?? false,
-          itemBuilder: (BuildContext context, int index) {
-            // var w = widget.data.children![index].build(
-            //   childBuilder: widget.childBuilder,
-            //   context: widget.context,
-            // );
-            return currentChildren[index]
-                .build(context: context, childBuilder: widget.childBuilder);
-          },
+        Padding(
+          padding: EdgeInsets.only(bottom: hideProgress == true ? 20 : 0),
+          child: ListView.builder(
+            addAutomaticKeepAlives: widget.valueAddAutomaticKeepAlives ?? true,
+            addRepaintBoundaries: widget.vlaueAddRepaintBoundaries ?? true,
+            addSemanticIndexes: widget.addSemanticIndexes ?? true,
+            cacheExtent: widget.itemExtent,
+            clipBehavior: widget.clipBehavior ?? Clip.hardEdge,
+            controller: controller,
+            dragStartBehavior:
+                widget.dragStartBehavior ?? DragStartBehavior.start,
+            itemCount: currentChildren.length,
+            itemExtent: widget.itemExtent,
+            key: widget.key,
+            keyboardDismissBehavior: widget.scrollViewKeyboardDismissBehavior ??
+                ScrollViewKeyboardDismissBehavior.manual,
+            padding: widget.padding,
+            physics: widget.physics,
+            primary: widget.primary,
+            prototypeItem: widget.prototypeItem != null
+                ? widget.prototypeItem!
+                    .build(context: context, childBuilder: widget.childBuilder)
+                : null,
+            restorationId: widget.restorationId,
+            reverse: widget.reverse ?? false,
+            scrollDirection: widget.scrollDirection ?? Axis.vertical,
+            semanticChildCount: currentChildren.length,
+            shrinkWrap: widget.shrinkWrap ?? false,
+            itemBuilder: (BuildContext context, int index) {
+              // var w = widget.data.children![index].build(
+              //   childBuilder: widget.childBuilder,
+              //   context: widget.context,
+              // );
+              return currentChildren[index]
+                  .build(context: context, childBuilder: widget.childBuilder);
+            },
+          ),
         ),
         // Empty data
         currentChildren.isEmpty
@@ -367,7 +371,10 @@ class _PaginationAndLoadingState extends State<PaginationAndLoading> {
                     child: widget.getMoreItmeLoading != null
                         ? widget.getMoreItmeLoading!.build(
                             context: context, childBuilder: widget.childBuilder)
-                        : CircularProgressIndicator()),
+                        : SpinKitThreeBounce(
+                            size: 25,
+                            color: Colors.lightBlue,
+                          )),
               )
             : Container(),
       ],

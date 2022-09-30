@@ -7,6 +7,7 @@ import 'package:json_dynamic_widget/src/builders/json_placeholder_image.dart';
 import 'package:json_dynamic_widget/src/builders/json_web_view_builder.dart';
 import 'package:json_dynamic_widget/src/schema/all.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/carousel_schema.dart';
+import 'package:json_dynamic_widget/src/schema/schemas/google_map_schema.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/pdf_view_schema.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/placeholder_schema_iamge.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/web_veiw_schema.dart';
@@ -125,6 +126,7 @@ class JsonWidgetInternalBuilders {
         .withHolderImage()
         .withWebView()
         .withDisableIndecator()
+        .withGoogleMap()
         .build();
   }
 }
@@ -995,6 +997,13 @@ class JsonWidgetInternalBuildersBuilder {
         builder: JsonDisableScrollIndecator.fromDynamic,
         schemaId: DisableScrollIndecatorSchema.id);
 
+    return this;
+  }
+
+  JsonWidgetInternalBuildersBuilder withGoogleMap() {
+    builders[JsonGoogleMapBuildWidget.type] = JsonWidgetBuilderContainer(
+        builder: JsonGoogleMapBuildWidget.fromDynamic,
+        schemaId: GoogleMapSchema.id);
     return this;
   }
 

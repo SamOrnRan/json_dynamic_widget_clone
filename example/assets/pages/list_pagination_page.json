@@ -426,35 +426,41 @@
       ]
     },
     "template": {
-      "type": "card",
+      "type": "ink_well",
+      "args": {
+        "onTap": "${toPageDitail('value')}"
+      },
       "child": {
-        "type": "column",
-        "children": [
-          {
-            "type": "placeholder_network",
-            "args": {
-              "boxFit": "contain",
-              "placeholderScale": 2.5,
-              "placeholder": "assets/images/android.png",
-              "image": "${value['image']}"
-            }
-          },
-          {
-            "type": "text",
-            "args": {
-              "text": "${value['name']}",
-              "style": {
-                "fontSize": "20"
+        "type": "card",
+        "child": {
+          "type": "column",
+          "children": [
+            {
+              "type": "placeholder_network",
+              "args": {
+                "boxFit": "contain",
+                "placeholderScale": 2.5,
+                "placeholder": "assets/images/android.png",
+                "image": "${value['image']}"
+              }
+            },
+            {
+              "type": "text",
+              "args": {
+                "text": "${value['name']}",
+                "style": {
+                  "fontSize": "20"
+                }
+              }
+            },
+            {
+              "type": "text",
+              "args": {
+                "text": "${value['disription']}"
               }
             }
-          },
-          {
-            "type": "text",
-            "args": {
-              "text": "${value['disription']}"
-            }
-          }
-        ]
+          ]
+        }
       }
     }
   },
@@ -475,20 +481,14 @@
         }
       },
       "body": {
-        "type": "list_view",
-        "args": {
-          "limits": 10,
-          "getmoreItemsLoading": {
-            "type": "text",
-            "args": {
-              "text": "getMore Items",
-              "style": {
-                "color": "#f00"
-              }
-            }
-          }
-        },
-        "children": "${for_each(entries['values'], 'template')}"
+        "type": "disable_indecator",
+        "child": {
+          "type": "list_view",
+          "args": {
+            "limits": 10
+          },
+          "children": "${for_each(entries['values'], 'template')}"
+        }
       }
     }
   }

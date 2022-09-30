@@ -1,0 +1,48 @@
+{
+    "type": "scaffold",
+    "args": {
+        "appBar": {
+            "type": "app_bar",
+            "args": {
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "Fruite"
+                    }
+                },
+                "centerTitle": true,
+                "backgroundColor": "#f00"
+            }
+        },
+        "body": {
+            "type": "column",
+            "children": [
+                {
+                    "type": "placeholder_network",
+                    "args": {
+                        "boxFit": "contain",
+                        "placeholderScale": 2.5,
+                        "placeholder": "assets/images/android.png",
+                        "image": "${image}"
+                    }
+                },
+                {
+                    "type": "text",
+                    "args": {
+                        "text": "${getvalueName}",
+                        "style": {
+                            "fontSize": 20,
+                            "color": "#f00"
+                        }
+                    }
+                },
+                {
+                    "type": "text",
+                    "args": {
+                        "text": "${description}"
+                    }
+                }
+            ]
+        }
+    }
+}

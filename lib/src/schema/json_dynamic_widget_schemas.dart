@@ -1,6 +1,7 @@
 import 'package:json_dynamic_widget/json_dynamic_widget_schemas.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/carousel_schema.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/disable_indecator_scroll.dart';
+import 'package:json_dynamic_widget/src/schema/schemas/google_map_schema.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/pdf_view_schema.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/placeholder_schema_iamge.dart';
 import 'package:json_dynamic_widget/src/schema/schemas/web_veiw_schema.dart';
@@ -116,7 +117,8 @@ class JsonDynamicWidgetSchemas {
     PdfViewSchema.id: PdfViewSchema.schema,
     WebViewSchema.id: WebViewSchema.schema,
     PlaceholderSchemaImage.id: PlaceholderSchemaImage.schema,
-    DisableScrollIndecatorSchema.id: DisableScrollIndecatorSchema.schema
+    DisableScrollIndecatorSchema.id: DisableScrollIndecatorSchema.schema,
+    GoogleMapSchema.id: GoogleMapSchema.schema,
   });
 
   static Map<String, dynamic>? lookup(String key) =>
