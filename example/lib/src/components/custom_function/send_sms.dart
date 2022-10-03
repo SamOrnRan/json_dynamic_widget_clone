@@ -12,10 +12,10 @@ JsonWidgetFunction launchUrlBody =
 
             await sendSMS(
                     message: message.toString(),
-                    recipients: ["$phoneNumber"],
+                    recipients: ['$phoneNumber'],
                     sendDirect: false)
                 .catchError((onError) {
-              print(onError);
+              // print(onError);
             });
           }
         });

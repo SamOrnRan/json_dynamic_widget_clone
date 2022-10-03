@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 // ignore: unnecessary_import
-import 'dart:typed_data';
+// import 'dart:typed_data';
 
 import 'package:automated_testing_framework/automated_testing_framework.dart';
 import 'package:automated_testing_framework_plugin_images/automated_testing_framework_plugin_images.dart';

@@ -9,7 +9,7 @@ JsonWidgetFunction shareBody = ({
       if (args != null) {
         var title = args[0];
         dynamic valueLinkUrl = args[1];
-        await FlutterShare.share(title: title ?? "", linkUrl: valueLinkUrl);
+        await FlutterShare.share(title: title ?? '', linkUrl: valueLinkUrl);
       }
     };
 const String key = 'share';

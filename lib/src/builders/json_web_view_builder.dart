@@ -79,7 +79,7 @@ class WebViewWidget extends StatefulWidget {
 class _WebViewWidget extends State<WebViewWidget> {
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
-  String url = "";
+  String url = '';
 
   @override
   void initState() {

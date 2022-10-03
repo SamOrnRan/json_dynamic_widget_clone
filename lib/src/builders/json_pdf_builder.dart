@@ -85,12 +85,12 @@ class WidgetPdfView extends StatefulWidget {
 
 class _PdfWidgetViewState extends State<WidgetPdfView> {
   late PdfController controller;
-  String valueUrl = "";
-  String valueAsset = "";
+  String valueUrl = '';
+  String valueAsset = '';
   @override
   void initState() {
-    valueAsset = widget.newFromAsset ?? "";
-    valueUrl = widget.newFromUrl ?? "";
+    valueAsset = widget.newFromAsset ?? '';
+    valueUrl = widget.newFromUrl ?? '';
     if (valueAsset.isNotEmpty) {
       _initAsset();
     } else if (valueUrl.isNotEmpty) {

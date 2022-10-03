@@ -1,19 +1,13 @@
 import 'package:json_dynamic_widget/builders.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget_schemas.dart';
-import 'package:json_dynamic_widget/src/builders/carousel_slider.dart';
+
 import 'package:json_dynamic_widget/src/builders/json_pdf_builder.dart';
-import 'package:json_dynamic_widget/src/builders/json_placeholder_image.dart';
+
 import 'package:json_dynamic_widget/src/builders/json_web_view_builder.dart';
 import 'package:json_dynamic_widget/src/schema/all.dart';
-import 'package:json_dynamic_widget/src/schema/schemas/carousel_schema.dart';
-import 'package:json_dynamic_widget/src/schema/schemas/google_map_schema.dart';
-import 'package:json_dynamic_widget/src/schema/schemas/pdf_view_schema.dart';
-import 'package:json_dynamic_widget/src/schema/schemas/placeholder_schema_iamge.dart';
-import 'package:json_dynamic_widget/src/schema/schemas/web_veiw_schema.dart';
 
-import '../schema/schemas/disable_indecator_scroll.dart';
-import 'disable_scroll_indecator.dart';
+import '../schema/schemas/placeholder_schema_iamge.dart';
 
 class JsonWidgetInternalBuilders {
   static Map<String, JsonWidgetBuilderContainer> defaults() {

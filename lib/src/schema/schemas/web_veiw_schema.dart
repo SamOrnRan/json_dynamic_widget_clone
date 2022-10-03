@@ -1,7 +1,7 @@
 import 'package:json_theme/json_theme_schemas.dart';
 
 class WebViewSchema {
-  static const id = "https://your-url-here.com/schemas/web_view";
+  static const id = 'https://your-url-here.com/schemas/web_view';
   static final schema = {
     r'$schema': 'http://json-schema.org/draft-06/schema#',
     r'$id': 'http://json-schema.org/draft-06/schema#',

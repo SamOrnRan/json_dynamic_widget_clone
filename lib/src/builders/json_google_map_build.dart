@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:json_class/json_class.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
+import 'package:json_dynamic_widget/src/models/utils.dart';
 import 'package:json_theme/json_theme.dart';
 
 class JsonGoogleMapBuildWidget extends JsonWidgetBuilder {
@@ -179,6 +180,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
   void initState() {
     _init();
     initMapType();
+    getMarker();
     _initialCameraPosition();
     super.initState();
   }
@@ -194,7 +196,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
       },
       onMapCreated: _onCreateMap,
       mapType: _mapType ?? MapType.normal,
-      markers: getMarker(),
+      markers: marker,
       compassEnabled: widget.compassEnabled ?? true,
       minMaxZoomPreference: MinMaxZoomPreference.unbounded,
       trafficEnabled: widget.trafficEnabled ?? false,
@@ -268,7 +270,9 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
   }
 
   // Marker location
-  Set<Marker> getMarker() {
+  void getMarker() async {
+    final iconMarker = await Containts.getBytesFromAsset(
+        path: 'assets/images/google_marker.png', width: 80);
     for (var i = 0; i < _currentPositionLaglng.length; i++) {
       _lat = double.parse(_currentPositionLaglng[i]['lat'].toString());
       _lng = double.parse(_currentPositionLaglng[i]['lng'].toString());
@@ -279,7 +283,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
               draggable: true,
               markerId: MarkerId(_lat.toString()),
               position: LatLng(_lat!, _lng!),
-              icon: BitmapDescriptor.defaultMarker,
+              icon: BitmapDescriptor.fromBytes(iconMarker),
               onTap: () async {
                 // when click on event marker it is zoom by current latlng
                 final controller = await googleMapController.future;
@@ -300,8 +304,6 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
         );
       });
     }
-
-    return marker;
   }
 
 // Menthod called when map is create
