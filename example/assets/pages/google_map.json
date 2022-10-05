@@ -1,63 +1,50 @@
 {
-    "type": "scaffold",
+    "type": "set_value",
     "args": {
-        "appBar": {
-            "type": "app_bar",
-            "args": {
-                "title": {
-                    "type": "text",
-                    "args": {
-                        "text": "Google Map"
-                    }
+        "latlng": {
+            "values": [
+                {
+                    "markerId": "hello_11",
+                    "lat": 11.536434370162064,
+                    "long": 104.83075749565744
+                    
                 },
-                "centerTitle": true,
-                "backgroundColor": "#f0f"
-            }
+                {
+                    "markerId": "hello_1",
+                    "lat": 11.528489190446436,
+                    "long": 104.83846896860669
+                }
+            ]
         },
-        "body": {
-            "type": "container",
-            "child": {
+        "marker": {
+            "markerId": "hello_11",
+            "lat": 11.528489190446436,
+            "long": 104.83846896860669,
+            "icon": "null"
+        }
+    },
+    "child": {
+        "type": "scaffold",
+        "args": {
+            "appBar": {
+                "type": "app_bar",
+                "args": {
+                    "title": {
+                        "type": "text",
+                        "args": {
+                            "text": "Google Map"
+                        }
+                    },
+                    "centerTitle": true,
+                    "backgroundColor": "#f0f"
+                }
+            },
+            "body": {
                 "type": "google_map",
                 "args": {
-                    "mapType": "normal",
-                    "zoomControlsEnabled": true,
                     "scrollGesturesEnabled": true,
-                    "liteModeEnabled": false,
-                    "zoom": 11,
-                    "latLng": [
-                        {
-                            "lat": 11.568622661422141,
-                            "lng": 104.89152488115025
-                        },
-                        {
-                            "lat": 11.573879186369805,
-                            "lng": 104.87729678559229
-                        },
-                        {
-                            "lat": 11.560275221326602,
-                            "lng": 104.84693560124225
-                        },
-                        {
-                            "lat": 11.579118921323174,
-                            "lng": 104.92238398001305
-                        },
-                        {
-                            "lat": 11.534309841630137,
-                            "lng": 104.8802761425225
-                        },
-                        {
-                            "lat": 11.457401066677331,
-                            "lng": 104.93190656009578
-                        },
-                        {
-                            "lat": 11.497520711367855,
-                            "lng": 104.86430527398703
-                        },
-                        {
-                            "lat": 11.605225693275784,
-                            "lng": 104.85548267385491
-                        }
-                    ]
+                    "mapType": "normal",
+                    "marker": "${marker}"
                 }
             }
         }

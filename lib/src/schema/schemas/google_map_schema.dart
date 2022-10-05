@@ -10,7 +10,7 @@ class GoogleMapSchema {
     'type': 'object',
     'title': 'GoogleMap',
     'additionalProperties': false,
-    'required': ['latLng'],
+    'required': [],
     'properties': {
       'zoom': SchemaHelper.numberSchema,
       'mapType': SchemaHelper.stringSchema,
@@ -29,6 +29,7 @@ class GoogleMapSchema {
       'padding': SchemaHelper.objectSchema(EdgeInsetsGeometrySchema.id),
       'indoorViewEnabled': SchemaHelper.boolSchema,
       'buildingsEnabled': SchemaHelper.boolSchema,
+      'marker': SchemaHelper.anySchema,
     }
   };
 }

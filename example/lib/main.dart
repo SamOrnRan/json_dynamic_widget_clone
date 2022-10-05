@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 // ignore: unnecessary_import
 // import 'dart:typed_data';
@@ -164,6 +165,16 @@ void main() async {
           }
           // ignore: avoid_print
           print(message);
+        },
+    'TestFromGooglemapMarker': ({args, required registry}) => () {
+          var message = 'This is a simple print message';
+          if (args?.isEmpty == false) {
+            for (var arg in args!) {
+              message += ' $arg';
+            }
+          }
+
+          log(message);
         },
     'negateBool': ({args, required registry}) => () {
           bool value = registry.getValue(args![0]);
