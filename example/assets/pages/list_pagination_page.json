@@ -481,14 +481,11 @@
         }
       },
       "body": {
-        "type": "disable_indecator",
-        "child": {
-          "type": "list_view",
-          "args": {
-            "limits": 10
-          },
-          "children": "${for_each(entries['values'], 'template')}"
-        }
+        "type": "list_view",
+        "args": {
+          "limits": 5
+        },
+        "children": "${for_each(entries['values'], 'template')}"
       }
     }
   }

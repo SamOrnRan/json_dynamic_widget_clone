@@ -1,26 +1,99 @@
 {
     "type": "set_value",
     "args": {
-        "latlng": {
-            "values": [
-                {
-                    "markerId": "hello_11",
-                    "lat": 11.536434370162064,
-                    "long": 104.83075749565744
-                    
+        "count": 0,
+        "marker": [
+            {
+                "markerId": "hello_11",
+                "draggable": true,
+                "latLng": {
+                    "lat": 11.53113228067837,
+                    "long": 104.85901360707597
                 },
-                {
-                    "markerId": "hello_1",
+                "infoWindow": {
+                    "title": "From NetWorkIcon",
+                    "snippet": "test : snippet"
+                },
+                "icon": {
+                    "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                },
+                "onTap": "${testFromGooglemapMarker('0','marker')}",
+                "onDrag": "${func1('0')}",
+                "onDragEnd": "${onDragEnd('0')}"
+            },
+            {
+                "draggable": true,
+                "markerId": "hello_1",
+                "latLng": {
                     "lat": 11.528489190446436,
                     "long": 104.83846896860669
+                },
+                "infoWindow": {
+                    "title": "From Network ICON",
+                    "snippet": "test : snippet"
+                },
+                "onTap": "${testFromGooglemapMarker('1','marker')}",
+                "onDrag": "${func1('1')}",
+                "onDragEnd": "${onDragEnd('1')}",
+                "icon": {
+                    "network_image": "https://cdn-icons-png.flaticon.com/512/854/854952.png"
                 }
-            ]
-        },
-        "marker": {
-            "markerId": "hello_11",
-            "lat": 11.528489190446436,
-            "long": 104.83846896860669,
-            "icon": "null"
+            },
+            {
+                "draggable": true,
+                "markerId": "hello_43",
+                "latLng": {
+                    "lat": 11.560981110859595,
+                    "long": 104.91271716089464
+                },
+                "infoWindow": {
+                    "title": "From AssetIcon",
+                    "snippet": "test : snippet bit icon"
+                },
+                "onDrag": "${func1('2')}",
+                "onTap": "${testFromGooglemapMarker('2')}",
+                "onDragEnd": "${onDragEnd('2')}",
+                "icon": {
+                    "width": 150,
+                    "height": 300,
+                    "src": "android.png"
+                }
+            },
+            {
+                "draggable": true,
+                "markerId": "hello_453",
+                "latLng": {
+                    "lat": 11.557292398203648,
+                    "long": 104.84833866588413
+                },
+                "infoWindow": {
+                    "title": "Choamchov City",
+                    "snippet": "Choamchov Shop"
+                },
+                "onTap": "${testFromGooglemapMarker('3')}",
+                "onDragEnd": "${onDragEnd('3')}",
+                "icon": {
+                    "height": 100,
+                    "title": "With title "
+                }
+            }
+        ],
+        "addvalue": {
+            "draggable": true,
+            "markerId": "hello_453",
+            "latLng": {
+                "lat": 11.557292398203648,
+                "long": 104.84833866588413
+            },
+            "infoWindow": {
+                "title": "Choamchov City",
+                "snippet": "Choamchov Shop"
+            },
+            "icon": {
+                "src": "google_marker.png"
+            },
+            "onTap": "${testFromGooglemapMarker('3')}",
+            "onDragEnd": "${onDragEnd('3')}"
         }
     },
     "child": {
@@ -41,10 +114,23 @@
             },
             "body": {
                 "type": "google_map",
+                "id": "marker",
                 "args": {
                     "scrollGesturesEnabled": true,
                     "mapType": "normal",
                     "marker": "${marker}"
+                }
+            },
+            "floatingActionButton": {
+                "type": "floating_action_button",
+                "args": {
+                    "onPressed": "${zoomtoMap('marker','count')}"
+                },
+                "child": {
+                    "type": "text",
+                    "args": {
+                        "text": "Zoom"
+                    }
                 }
             }
         }

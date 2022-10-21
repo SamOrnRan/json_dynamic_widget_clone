@@ -13,7 +13,7 @@ class GoogleMapSchema {
     'required': [],
     'properties': {
       'zoom': SchemaHelper.numberSchema,
-      'mapType': SchemaHelper.stringSchema,
+      'mapType': SchemaHelper.anySchema,
       'compassEnabled': SchemaHelper.boolSchema,
       'latLng': SchemaHelper.anySchema,
       'mapToolbarEnabled': SchemaHelper.boolSchema,

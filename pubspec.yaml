@@ -19,9 +19,9 @@ dependencies:
     sdk: 'flutter'
   flutter_spinkit: '^5.1.0'
   form_validation: '^2.1.0+13'
-  pdfx: ^2.2.0
-  json_conditional: '^2.1.0+9'
   json_class: '^2.1.2+8'
+  json_conditional: '^2.1.0+9'
+  pdfx: ^2.2.0
   json_schema2: '^2.0.2+9'
   json_theme: '^4.0.0+8'
   internet_file: '^1.2.0'

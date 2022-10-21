@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:automated_testing_framework/automated_testing_framework.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
@@ -33,7 +31,7 @@ class ResetPageState extends State<ResetPage> {
   Future<void> _navigateHome() async {
     while (true) {
       await Future.delayed(Duration(milliseconds: 300));
-      await Navigator.of(context).push(
+      await Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (_) => RootPage(),
         ),
@@ -100,10 +98,7 @@ class RootPage extends StatelessWidget {
     'issue_20_list': _onJsonPageSelected,
     'issue_20_single': _onJsonPageSelected,
     'issue_24': (context, _) async => Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (BuildContext context) => Issue24Page(),
-          ),
-        ),
+        MaterialPageRoute(builder: (BuildContext context) => Issue24Page())),
     'issue_30': _onJsonPageSelected,
     'layout_builder': _onJsonPageSelected,
     'length': _onJsonPageSelected,
@@ -138,54 +133,45 @@ class RootPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var names = _pages.keys.toList();
     names.sort();
-
     return Scaffold(
       appBar: AppBar(
-        actions: !kIsWeb && kDebugMode
-            ? [
-                IconButton(
-                  icon: Icon(Icons.bug_report),
-                  onPressed: () async {
-                    var testController = TestController.of(context)!;
-                    var tests = await testController.loadTests(context);
-
-                    var passed = true;
-                    for (var test in tests!) {
-                      var report = await testController.executeTest(
-                        test: await test.loader.load(ignoreImages: true),
-                      );
-
-                      if (report.success) {
-                        await testController.goldenImageWriter(report);
-                      }
-
-                      passed = passed && report.success;
-                    }
-                  },
-                ),
-              ]
-            : null,
         title: Text('Select Widget / Page'),
+        centerTitle: true,
       ),
       body: ListView.builder(
         itemCount: _pages.length,
         itemBuilder: (BuildContext context, int index) => Testable(
           id: 'home_${names[index]}',
-          child: Container(
-            height: 50,
-            width: double.infinity,
-            child: Card(
-              child: GestureDetector(
-                onTap: () => _pages[names[index]]!(context, names[index]),
-                child: Padding(
-                    padding: EdgeInsets.only(left: 20, top: 10),
+          child: GestureDetector(
+            onTap: () => _pages[names[index]]!(context, names[index]),
+            child: Container(
+              margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.white,
+                border: Border.all(
+                    color: Colors.blueGrey,
+                    style: BorderStyle.solid,
+                    width: .5),
+              ),
+              height: 60,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       names[index],
                       style: TextStyle(
                           color: Colors.red,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
-                    )),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_ios),
+                ],
               ),
             ),
           ),

@@ -279,6 +279,7 @@ class _PaginationAndLoadingState extends State<PaginationAndLoading> {
     });
   }
 
+//initail page
   void iniitPage() {
     endAt = offset + limits!;
     totalPage = (widget.data.children!.length / limits!).floor();
@@ -288,6 +289,7 @@ class _PaginationAndLoadingState extends State<PaginationAndLoading> {
     currentChildren = widget.data.children!.getRange(offset, endAt!).toList();
   }
 
+  // when scroll to maximum it add new to [currentChildren]
   void nextPage() {
     if (page < totalPage) {
       setState(() {
@@ -296,7 +298,7 @@ class _PaginationAndLoadingState extends State<PaginationAndLoading> {
             ? endAt! + limits!
             : widget.data.children!.length;
         hideProgress = true;
-        Timer(Duration(milliseconds: 100), () {
+        Timer(Duration(milliseconds: 700), () {
           currentChildren =
               widget.data.children!.getRange(offset, endAt!).toList();
           setState(() {
