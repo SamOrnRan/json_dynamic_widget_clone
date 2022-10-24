@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:example/src/components/custom_function/send_sms.dart'
     as send_sms;
@@ -18,6 +17,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
 // ignore: implementation_imports
 import 'package:json_dynamic_widget/src/utils/add_marker.dart';
+import 'components/custom_function/set_show_dialog.dart';
 
 class InitialRegistry {
   static void init(JsonWidgetRegistry registry,
@@ -112,7 +112,7 @@ class InitialRegistry {
             // ignore: avoid_print
             print(message);
           },
-      'testFromGooglemapMarker': ({args, required registry}) => () async {
+      'onClickMarker': ({args, required registry}) => () async {
             ImplementationMarker markers =
                 registry.getValue('valueChnageNotifier');
 
@@ -122,8 +122,11 @@ class InitialRegistry {
                 'This is a simple print message : ${markers.markerModify.value.length.toString()}';
             Completer<GoogleMapController> controller =
                 registry.getValue('google_map_controller');
-
-            // List<dynamic> marker = registry.getValue('marker');
+            // if (args[3] && args[2] != null) {
+            //   registry.setValue('editDialogDatLatLng',
+            //       markers.markerModify.value[index].position!.lat.toString());
+            // }
+            // // List<dynamic> marker = registry.getValue('marker');
             // log()
             final controllers = await controller.future;
 
@@ -136,7 +139,19 @@ class InitialRegistry {
                     zoom: 19.0),
               ),
             );
-            log(message);
+            registry.setValue(
+                'latValue', markers.markerModify.value[0].position!.lat);
+            registry.setValue(
+                'longValue', markers.markerModify.value[0].position!.long);
+            // Show Dialog when click marker
+            CustomDialog().showCustomDialog(
+                dialogDataVarName: args[3],
+                buildContextVarName: args[2],
+                registry: registry);
+
+            // registry.setValue('show_dialog', args[2]);
+            // registry.setValue('show_dialog', args[3]);
+            // registry.getFunction('show_dialog');
           },
 
       'zoomtoMap': ({args, required registry}) => () async {
@@ -181,6 +196,7 @@ class InitialRegistry {
                     zoom: 19.0),
               ),
             );
+
             // log(' $latLng');
           },
       'negateBool': ({args, required registry}) => () {

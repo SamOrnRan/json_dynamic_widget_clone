@@ -1,65 +1,221 @@
 {
-    "type": "set_value",
+    "type": "save_context",
     "args": {
-        "count": 0,
-        "marker": [
-            {
-                "markerId": "hello_11",
-                "draggable": true,
-                "latLng": {
-                    "lat": 11.53113228067837,
-                    "long": 104.85901360707597
+        "key": "context"
+    },
+    "child": {
+        "type": "set_value",
+        "args": {
+            "editDialogData": {
+                "actions": [
+                    {
+                        "title": {
+                            "type": "text",
+                            "args": {
+                                "text": "Okay"
+                            }
+                        },
+                        "onPressed": "${noop()}"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "args": {
+                        "text": "Static Dialog Google Map"
+                    }
                 },
-                "infoWindow": {
-                    "title": "From NetWorkIcon",
-                    "snippet": "test : snippet"
-                },
-                "icon": {
-                    "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
-                },
-                "onTap": "${testFromGooglemapMarker('0','marker')}",
-                "onDrag": "${func1('0')}",
-                "onDragEnd": "${onDragEnd('0')}"
-            },
-            {
-                "draggable": true,
-                "markerId": "hello_1",
-                "latLng": {
-                    "lat": 11.528489190446436,
-                    "long": 104.83846896860669
-                },
-                "infoWindow": {
-                    "title": "From Network ICON",
-                    "snippet": "test : snippet"
-                },
-                "onTap": "${testFromGooglemapMarker('1','marker')}",
-                "onDrag": "${func1('1')}",
-                "onDragEnd": "${onDragEnd('1')}",
-                "icon": {
-                    "network_image": "https://cdn-icons-png.flaticon.com/512/854/854952.png"
+                "content": {
+                    "type": "sized_box",
+                    "args": {
+                        "height": 100
+                    },
+                    "child": {
+                        "type": "column",
+                        "children": [
+                            {
+                                "type": "text",
+                                "args": {
+                                    "text": "${latValue}"
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "args": {
+                                    "text": "${longValue}"
+                                }
+                            },
+                            {
+                                "type": "sized_box",
+                                "args": {
+                                    "height": 20
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "args": {
+                                    "text": "This is  current locations ",
+                                    "style": {
+                                        "fontSize": 20,
+                                        "color": "#40E0D0"
+                                    }
+                                }
+                            }
+                        ]
+                    }
                 }
             },
-            {
-                "draggable": true,
-                "markerId": "hello_43",
-                "latLng": {
-                    "lat": 11.560981110859595,
-                    "long": 104.91271716089464
+            "count": 0,
+            "marker": [
+                {
+                    "markerId": "hello_11",
+                    "draggable": true,
+                    "latLng": {
+                        "lat": 11.53113228067837,
+                        "long": 104.85901360707597
+                    },
+                    "infoWindow": {
+                        "title": "From NetWorkIcon",
+                        "snippet": "test : snippet"
+                    },
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    },
+                    "onTap": "${onClickMarker('0','marker','context','editDialogData')}",
+                    "onDrag": "${func1('0')}",
+                    "onDragEnd": "${onDragEnd('0')}"
                 },
-                "infoWindow": {
-                    "title": "From AssetIcon",
-                    "snippet": "test : snippet bit icon"
+                {
+                    "draggable": true,
+                    "markerId": "hello_1",
+                    "latLng": {
+                        "lat": 11.528489190446436,
+                        "long": 104.83846896860669
+                    },
+                    "infoWindow": {
+                        "title": "From Network ICON",
+                        "snippet": "test : snippet"
+                    },
+                    "onTap": "${onClickMarker('1','marker','context','editDialogData')}",
+                    "onDrag": "${func1('1')}",
+                    "onDragEnd": "${onDragEnd('1')}",
+                    "icon": {
+                        "network_image": "https://cdn-icons-png.flaticon.com/512/854/854952.png"
+                    }
                 },
-                "onDrag": "${func1('2')}",
-                "onTap": "${testFromGooglemapMarker('2')}",
-                "onDragEnd": "${onDragEnd('2')}",
-                "icon": {
-                    "width": 150,
-                    "height": 300,
-                    "src": "android.png"
+                {
+                    "draggable": true,
+                    "markerId": "hello_43",
+                    "latLng": {
+                        "lat": 11.560981110859595,
+                        "long": 104.91271716089464
+                    },
+                    "infoWindow": {
+                        "title": "From AssetIcon",
+                        "snippet": "test : snippet bit icon"
+                    },
+                    "onDrag": "${func1('2')}",
+                    "onTap": "${onClickMarker('2','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('2')}",
+                    "icon": {
+                        "width": 150,
+                        "height": 300,
+                        "src": "android.png"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_450",
+                    "latLng": {
+                        "lat": 11.598550801048688,
+                        "long": 104.88610315765484
+                    },
+                    "onTap": "${onClickMarker('3','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('3')}",
+                    "icon": {
+                        "height": 100,
+                        "title": "Ecoinsoft"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_451",
+                    "latLng": {
+                        "lat": 11.534470877083557,
+                        "long": 104.82946362802099
+                    },
+                    "onTap": "${onClickMarker('4','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('4')}",
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_452",
+                    "latLng": {
+                        "lat": 11.553275905489013,
+                        "long": 104.84374671093003
+                    },
+                    "onTap": "${onClickMarker('5','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('5')}",
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_453",
+                    "latLng": {
+                        "lat": 11.568312673455008,
+                        "long": 104.89080135356312
+                    },
+                    "onTap": "${onClickMarker('6','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('6')}",
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_454",
+                    "latLng": {
+                        "lat": 11.534589483072526,
+                        "long": 104.88605091653878
+                    },
+                    "onTap": "${onClickMarker('7','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('7')}",
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_455",
+                    "latLng": {
+                        "lat": 11.5724482735224,
+                        "long": 104.89909401581313
+                    },
+                    "onTap": "${onClickMarker('8','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('8')}",
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    }
+                },
+                {
+                    "draggable": true,
+                    "markerId": "hello_456",
+                    "latLng": {
+                        "lat": 11.647760603389827,
+                        "long": 104.80970985256516
+                    },
+                    "onTap": "${onClickMarker('8','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('8')}",
+                    "icon": {
+                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                    }
                 }
-            },
-            {
+            ],
+            "addvalue": {
                 "draggable": true,
                 "markerId": "hello_453",
                 "latLng": {
@@ -70,66 +226,48 @@
                     "title": "Choamchov City",
                     "snippet": "Choamchov Shop"
                 },
-                "onTap": "${testFromGooglemapMarker('3')}",
-                "onDragEnd": "${onDragEnd('3')}",
                 "icon": {
-                    "height": 100,
-                    "title": "With title "
-                }
+                    "src": "google_marker.png"
+                },
+                "onTap": "${onClickMarker('3')}",
+                "onDragEnd": "${onDragEnd('3')}"
             }
-        ],
-        "addvalue": {
-            "draggable": true,
-            "markerId": "hello_453",
-            "latLng": {
-                "lat": 11.557292398203648,
-                "long": 104.84833866588413
-            },
-            "infoWindow": {
-                "title": "Choamchov City",
-                "snippet": "Choamchov Shop"
-            },
-            "icon": {
-                "src": "google_marker.png"
-            },
-            "onTap": "${testFromGooglemapMarker('3')}",
-            "onDragEnd": "${onDragEnd('3')}"
-        }
-    },
-    "child": {
-        "type": "scaffold",
-        "args": {
-            "appBar": {
-                "type": "app_bar",
-                "args": {
-                    "title": {
+        },
+        "child": {
+            "type": "scaffold",
+            "args": {
+                "appBar": {
+                    "type": "app_bar",
+                    "args": {
+                        "title": {
+                            "type": "text",
+                            "args": {
+                                "text": "Google Map"
+                            }
+                        },
+                        "centerTitle": true,
+                        "backgroundColor": "#f0f"
+                    }
+                },
+                "body": {
+                    "type": "google_map",
+                    "id": "marker",
+                    "args": {
+                        "scrollGesturesEnabled": true,
+                        "mapType": "normal",
+                        "marker": "${marker}"
+                    }
+                },
+                "floatingActionButton": {
+                    "type": "floating_action_button",
+                    "args": {
+                        "onPressed": "${zoomtoMap('marker','count')}"
+                    },
+                    "child": {
                         "type": "text",
                         "args": {
-                            "text": "Google Map"
+                            "text": "Zoom"
                         }
-                    },
-                    "centerTitle": true,
-                    "backgroundColor": "#f0f"
-                }
-            },
-            "body": {
-                "type": "google_map",
-                "id": "marker",
-                "args": {
-                    "scrollGesturesEnabled": true,
-                    "mapType": "normal",
-                    "marker": "${marker}"
-                }
-            },
-            "floatingActionButton": {
-                "type": "floating_action_button",
-                "args": {
-                    "onPressed": "${zoomtoMap('marker','count')}"
-                },
-                "child": {
-                    "type": "text",
-                    "args": {
-                        "text": "Zoom"
                     }
                 }
             }

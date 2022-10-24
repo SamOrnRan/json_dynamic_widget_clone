@@ -95,7 +95,7 @@ class JsonGoogleMapBuildWidget extends JsonWidgetBuilder {
             JsonClass.parseBool(map['buildingsEnabled'], whenNull: true),
         trafficEnabled:
             JsonClass.parseBool(map['trafficEnabled'], whenNull: false),
-        zoomMap: map['zoom'] != null ? JsonClass.parseDouble(map['zoom']) : 5.0,
+        zoomMap: JsonClass.parseDouble(map['zoom'], 12.2),
         minMaxZoomPreference: map['minMaxZoomPreference'] != null
             ? map['minMaxZoomPreference'] = MinMaxZoomPreference.unbounded
             : MinMaxZoomPreference.unbounded,
@@ -206,7 +206,6 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
   final Set<Marker> _marker = {};
   Uint8List? iconMarker;
   BitmapDescriptor? customIcon;
-  dynamic values = [];
   @override
   void initState() {
     init();
@@ -254,7 +253,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
     _cameraPosition = CameraPosition(
       target: LatLng(implementMaker.markerModify.value[0].position!.lat ?? 0.0,
           implementMaker.markerModify.value[0].position!.long ?? 0.0),
-      zoom: 12.2,
+      zoom: widget.zoomMap!,
     );
     // initIcon(implementMaker.markerModify.value);
 
