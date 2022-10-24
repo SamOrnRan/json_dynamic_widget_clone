@@ -221,7 +221,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
     _mapType = ConvertorCustome.formDynamicMapType(widget.mapType);
     createMarker(implementMaker.markerModify.value);
 
-    /// set [ImplementationMarker] inot  jsonWidgetRegistry
+    /// set [ImplementationMarker] into  jsonWidgetRegistry
     widget.data.registry.setValue('valueChnageNotifier', implementMaker);
 
     /// set [GoogleMapController] into  jsonWidgetRegistry
