@@ -117,9 +117,7 @@
                     "onTap": "${onClickMarker('2','marker','context','editDialogData')}",
                     "onDragEnd": "${onDragEnd('2')}",
                     "icon": {
-                        "width": 150,
-                        "height": 300,
-                        "src": "android.png"
+                        "src": "assets/images/android.png"
                     }
                 },
                 {
@@ -133,7 +131,7 @@
                     "onDragEnd": "${onDragEnd('3')}",
                     "icon": {
                         "height": 100,
-                        "title": "Ecoinsoft"
+                        "title": "E"
                     }
                 },
                 {
@@ -146,7 +144,7 @@
                     "onTap": "${onClickMarker('4','marker','context','editDialogData')}",
                     "onDragEnd": "${onDragEnd('4')}",
                     "icon": {
-                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                        "src": "assets/images/google_marker.png"
                     }
                 },
                 {
@@ -159,7 +157,7 @@
                     "onTap": "${onClickMarker('5','marker','context','editDialogData')}",
                     "onDragEnd": "${onDragEnd('5')}",
                     "icon": {
-                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                        "network_image": "https://assets.stickpng.com/images/5888920ebc2fc2ef3a1860a9.png"
                     }
                 },
                 {
@@ -172,7 +170,7 @@
                     "onTap": "${onClickMarker('6','marker','context','editDialogData')}",
                     "onDragEnd": "${onDragEnd('6')}",
                     "icon": {
-                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                        "network_image": "https://cdn-icons-png.flaticon.com/512/1479/1479518.png"
                     }
                 },
                 {
@@ -185,7 +183,7 @@
                     "onTap": "${onClickMarker('7','marker','context','editDialogData')}",
                     "onDragEnd": "${onDragEnd('7')}",
                     "icon": {
-                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                        "network_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Map_pin_icon_green.svg/800px-Map_pin_icon_green.svg.png"
                     }
                 },
                 {
@@ -198,21 +196,22 @@
                     "onTap": "${onClickMarker('8','marker','context','editDialogData')}",
                     "onDragEnd": "${onDragEnd('8')}",
                     "icon": {
-                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
+                        "network_image": "https://www.nicepng.com/png/detail/15-159490_small-google-maps-marker-blue.png"
                     }
                 },
                 {
                     "draggable": true,
-                    "markerId": "hello_456",
+                    "markerId": "hello_256",
                     "latLng": {
                         "lat": 11.647760603389827,
                         "long": 104.80970985256516
                     },
-                    "onTap": "${onClickMarker('8','marker','context','editDialogData')}",
-                    "onDragEnd": "${onDragEnd('8')}",
-                    "icon": {
-                        "network_image": "https://cdn.pixabay.com/photo/2014/04/03/10/03/google-309740_1280.png"
-                    }
+                    "infoWindow": {
+                        "title": "defaultMarker",
+                        "snippet": " snippet"
+                    },
+                    "onTap": "${onClickMarker('9','marker','context','editDialogData')}",
+                    "onDragEnd": "${onDragEnd('9')}"
                 }
             ],
             "addvalue": {
@@ -255,7 +254,8 @@
                     "args": {
                         "scrollGesturesEnabled": true,
                         "mapType": "normal",
-                        "marker": "${marker}"
+                        "marker": "${marker}",
+                        "zoom": 12.0
                     }
                 },
                 "floatingActionButton": {

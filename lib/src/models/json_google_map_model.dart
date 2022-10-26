@@ -154,8 +154,7 @@ class LatLngPosition extends JsonClass {
 // not use  create for testing
 class IconMarker extends JsonClass {
   IconMarker({
-    this.width = 75,
-    this.height = 140,
+    this.size,
     this.assetIcon = 'null',
     this.netIcon = 'null',
     this.text = 'null',
@@ -167,20 +166,19 @@ class IconMarker extends JsonClass {
       result = IconMarker(
         assetIcon: map['src'].toString(),
         netIcon: map['network_image'].toString(),
-        height: JsonClass.parseInt(map['height'], 140),
-        width: JsonClass.parseInt(map['width'], 76),
+        size: JsonClass.parseDouble(map['size'], 100),
         text: map['title'].toString(),
       );
     }
     return result!;
   }
 
-  int? width, height;
+  double? size;
   String? assetIcon;
   String? netIcon;
   String? text;
 
   @override
   Map<String, dynamic> toJson() =>
-      {'height': height, 'width': width, 'src': assetIcon};
+      {'size': size, 'src': assetIcon, 'network_image': netIcon, 'title': text};
 }

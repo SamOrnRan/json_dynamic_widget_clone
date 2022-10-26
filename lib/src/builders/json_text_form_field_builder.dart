@@ -418,7 +418,7 @@ class _JsonTextFormFieldWidgetState extends State<_JsonTextFormFieldWidget> {
             baseOffset: value.length,
             extentOffset: value.length,
           ),
-          // composing: TextRange(start: 0, end: value.length),
+          composing: TextRange(start: 0, end: value.length),
         );
         widget.builder.controller.value = textValue;
       }

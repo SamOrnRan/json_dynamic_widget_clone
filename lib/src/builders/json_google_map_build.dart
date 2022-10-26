@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'package:child_builder/child_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:json_class/json_class.dart';
 import 'package:json_dynamic_widget/json_dynamic_widget.dart';
@@ -10,8 +9,8 @@ import 'package:json_dynamic_widget/src/utils/add_marker.dart';
 import 'package:json_dynamic_widget/src/utils/convertor_custom.dart';
 import 'package:json_theme/json_theme.dart';
 import '../models/utils.dart';
-import 'dart:ui' as ui;
 
+// ignore: must_be_immutable
 class JsonGoogleMapBuildWidget extends JsonWidgetBuilder {
   JsonGoogleMapBuildWidget({
     this.mapType,
@@ -194,6 +193,7 @@ class GoogleMapWidget extends StatefulWidget {
 
 class _GoogleMapWidgetState extends State<GoogleMapWidget> {
   Completer<GoogleMapController> googleMapController = Completer();
+  final globalKey = GlobalKey();
 
   ///[ImplementationMarker] create object
   ImplementationMarker implementMaker = ImplementationMarker();
@@ -243,6 +243,8 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
 
   @override
   Widget build(BuildContext context) {
+    MyMarker(globalKey);
+
     /// get from  [List]
     implementMaker.markerModify.value =
         List.from(implementMaker.markerModify.value);
@@ -296,16 +298,17 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
       if (element.icon != null) {
         if (element.icon!.assetIcon != 'null' ||
             element.icon!.netIcon != 'null') {
-          iconMarker = await Containts.getBytesFromImageIcon(
-              path: element.icon!,
-              width: element.icon!.width!,
-              height: element.icon!.height!);
+          iconMarker = await Containts.getMarkerIcon(
+            element.icon!,
+            size: element.icon!.size!,
+            addBorder: true,
+            borderColor: Colors.red,
+          );
         } else if (element.icon!.text!.isNotEmpty &&
             element.icon!.text != 'null') {
           iconMarker = await Containts.getBytesFromCanvas(
               element.icon!.text ?? 'null',
-              width: element.icon!.width! + 100,
-              height: element.icon!.height);
+              size: element.icon!.size!);
         }
 
         setState(() {});
@@ -325,6 +328,7 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
           infoWindow: element.infoWindow ?? InfoWindow.noText,
           onTap: element.onTap,
           draggable: element.draggable!,
+          // icon: customIcon!,
           icon: iconMarker != null
               ? BitmapDescriptor.fromBytes(iconMarker!)
               : BitmapDescriptor.defaultMarker,
@@ -369,5 +373,51 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
     final controller = await googleMapController.future;
     await controller
         .animateCamera(CameraUpdate.newCameraPosition(_cameraPosition!));
+  }
+}
+
+class MyMarker extends StatelessWidget {
+  // declare a global key and get it trough Constructor
+
+  MyMarker(this.globalKeyMyWidget);
+  final GlobalKey globalKeyMyWidget;
+
+  @override
+  Widget build(BuildContext context) {
+    // wrap your widget with RepaintBoundary and
+    // pass your global key to RepaintBoundary
+    return RepaintBoundary(
+      key: globalKeyMyWidget,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            width: 250,
+            height: 180,
+            decoration:
+                BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+          ),
+          Container(
+              width: 220,
+              height: 150,
+              decoration:
+                  BoxDecoration(color: Colors.amber, shape: BoxShape.circle),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.accessibility,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                  Text(
+                    'Widget',
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                ],
+              )),
+        ],
+      ),
+    );
   }
 }
